@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkyCast 🌤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🌈 background -->
+<div class="background" id="bg"></div>
+
+<!-- 🌧️ rain -->
+<div id="rain"></div>
+
+<!-- ☀️ sun -->
+<div id="sun"></div>
+
+<!-- ⚡ lightning -->
+<div id="flash"></div>
+
+<!-- 🔊 thunder -->
+<audio id="thunder" src="https://www.soundjay.com/nature/thunder-01.mp3"></audio>
+
+<div class="app">
+
+  <div class="top-bar">
+    <h1>SkyCast</h1>
+
+    <div class="toggle-switch" onclick="toggleDark()">
+      <div class="circle"></div>
+    </div>
+  </div>
+
+  <p class="subtitle">Skycast: A Better Experience 🌤️</p>
+
+  <div class="search">
+    <input id="cityInput" placeholder="Enter city...">
+    <button onclick="getWeather()">Search</button>
+    <button onclick="getLocationWeather()">📍</button>
+  </div>
+
+  <div class="weather-card">
+    <h2 id="city">--</h2>
+    <div class="temp" id="temp">--°C</div>
+    <div class="icon" id="icon">🌤️</div>
+    <p id="desc">--</p>
+
+    <div class="details">
+      <div>💧 <span id="humidity">--</span></div>
+      <div>🌬️ <span id="wind">--</span></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

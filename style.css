@@ -1,0 +1,194 @@
+body {
+margin: 0;
+font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+overflow: hidden;
+color: white;
+transition: 0.4s;
+}
+
+/* 🌈 BACKGROUND */
+.background {
+position: fixed;
+inset: 0;
+background: linear-gradient(-45deg,#2193b0,#6dd5ed,#2193b0);
+background-size: 400% 400%;
+animation: move 10s ease infinite;
+z-index: -3;
+transition: 1s;
+}
+
+@keyframes move {
+0% {background-position:0% 50%;}
+50% {background-position:100% 50%;}
+100% {background-position:0% 50%;}
+}
+
+/* 🌧️ RAIN */
+#rain {
+position: fixed;
+inset: 0;
+z-index: -2;
+pointer-events: none;
+}
+
+.drop {
+position: absolute;
+width: 2px;
+height: 20px;
+background: white;
+opacity: 0.6;
+animation: fall linear infinite;
+}
+
+@keyframes fall {
+to { transform: translateY(100vh); }
+}
+
+/* ☀️ SUN */
+#sun {
+position: fixed;
+width: 80px;
+height: 80px;
+border-radius: 50%;
+background: radial-gradient(circle,#FFD700,#FFA500);
+top: 80%;
+left: 10%;
+z-index: -1;
+transition: all 2s ease;
+box-shadow: 0 0 50px rgba(255,215,0,0.7);
+}
+
+/* hide sun at night */
+body.night #sun {
+opacity: 0;
+}
+
+/* ⚡ FLASH */
+#flash {
+position: fixed;
+inset: 0;
+background: white;
+opacity: 0;
+z-index: 999;
+pointer-events: none;
+}
+
+.flash {
+animation: lightning 0.2s;
+}
+
+@keyframes lightning {
+0% {opacity: 0;}
+50% {opacity: 0.8;}
+100% {opacity: 0;}
+}
+
+/* UI */
+.app {
+position: relative;
+z-index: 2;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 50px;
+}
+
+.top-bar {
+display: flex;
+justify-content: space-between;
+width: 300px;
+align-items: center;
+}
+
+.subtitle {
+opacity: 0.7;
+}
+
+.search {
+margin-top: 15px;
+}
+
+.search input {
+padding: 12px;
+border-radius: 12px;
+border: none;
+outline: none;
+}
+
+.search button {
+padding: 12px;
+border-radius: 12px;
+border: none;
+background: black;
+color: white;
+cursor: pointer;
+}
+
+.weather-card {
+margin-top: 25px;
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(20px);
+padding: 25px;
+border-radius: 25px;
+width: 280px;
+text-align: center;
+}
+
+.temp {
+font-size: 48px;
+font-weight: bold;
+}
+
+.icon {
+font-size: 45px;
+}
+
+/* 🌙 DARK MODE */
+body.dark .background {
+filter: brightness(0.3);
+}
+
+body.dark #rain {
+opacity: 0.8;
+}
+
+body.dark .weather-card {
+background: rgba(0,0,0,0.45);
+}
+
+body.dark .search input {
+background: #222;
+color: white;
+}
+
+body.dark .search button {
+background: #333;
+}
+
+.toggle-switch {
+width: 50px;
+height: 28px;
+background: rgba(255,255,255,0.3);
+border-radius: 50px;
+position: relative;
+cursor: pointer;
+}
+
+.circle {
+width: 22px;
+height: 22px;
+background: white;
+border-radius: 50%;
+position: absolute;
+top: 3px;
+left: 3px;
+transition: 0.3s;
+}
+
+body.dark .circle {
+transform: translateX(22px);
+}
+
+body.dark .toggle-switch {
+background: #4cd964;
+}
