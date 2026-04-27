@@ -49,7 +49,7 @@ Built with **vanilla HTML, CSS, and JavaScript**, it enhances real-time weather 
 ## 📷 UI Preview
 
 <div align="center">
-  <img src="https://via.placeholder.com/800x400?text=SkyCast+Preview" width="800" />
+  <img src="https://raw.githubusercontent.com/EnukaSathmina/SkyCast/refs/heads/main/img.png" width="800" />
 </div>
 
 ---
